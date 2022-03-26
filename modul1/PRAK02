@@ -1,0 +1,15 @@
+<?php
+$x = 7.9;
+$y = 8.8;
+$z = 9.2;
+$value = 1/3*$x*$y*$z;
+
+
+echo "Panjang : ".$x;
+echo "<br>";
+echo "Lebar   : ".$y;
+echo "<br>";
+echo "Tinggi  : ".$z;
+echo "<br>";
+echo "Hasil   : ".round($value,3)." m3";
+?>
