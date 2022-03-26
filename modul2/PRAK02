@@ -1,0 +1,79 @@
+<html>
+<head>
+    <style>
+        h4{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<form method="POST">
+<div>
+    <label> Nama </label>
+    <input type=" text" name="nama">
+    <?php
+    $nama = null;
+    if(isset($_POST['submit']))
+    {
+       $nama = $_POST['nama'];
+       if($nama==null)
+       {
+          echo "<h4>*Nama tidak boleh kosong </h4>";
+       }
+    }
+?>
+</div>
+<div>
+    <label> NIM </label>
+    <input type=" text" name="nim">
+    <?php
+    $nim = null;
+    if(isset($_POST['submit']))
+    {
+        $nim = $_POST['nim'];
+        if($nim == null)
+        {
+            echo"<h4>*Nim tidak boleh kosong </h4>";
+        }
+    }
+    ?>
+</div>
+<div>
+    <label> Gender : </label></br>
+    <?php
+    $gender = null;
+    if(isset($_POST['submit']))
+    {
+        $gender = isset($_POST['gender']);
+        if($gender == null)
+        {
+            echo"<h4>*gender tidak boleh kosong </h4>";
+        }
+    }
+    ?>
+    <input type="radio" name="gender" value="Laki-laki"> Laki-laki </br>
+    <input type="radio" name="gender" value="Perempuan"> Perempuan </br>
+
+</div>
+<div>
+    <button type="submit" name="submit" value="submit"> submit </button>
+</div>
+<b><h1> Output </h1></b> </br>
+<?php
+    if($nama !=null && $nim !=null && $gender !=null )
+    {
+        echo "$nama </br>";
+        echo "$nim  </br>";
+
+        if($gender == "Laki-laki")
+        {
+            echo"Laki-laki";
+        }elseif ($gender == "perempuan") {
+            echo " perempuan";
+        }
+    }
+?>
+</form>
+</body>
+
+</html>
