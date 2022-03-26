@@ -1,0 +1,127 @@
+<html>
+<head>
+</head>
+<body>
+<form method="POST">
+<div>
+<label> Nilai : </label>
+<input type="text" name="nilai">
+</div>
+<div>
+<label> Dari: </label></br>
+<input type="radio" name="p1" value="C1"> Celcius </br>
+<input type="radio" name="p1" value="F1"> Fahrenheit </br>
+<input type="radio" name="p1" value="R1"> Rheamur </br>
+<input type="radio" name="p1" value="K1"> Kelvin </br>
+</div>
+<div>
+<label> Ke: </label></br>
+<input type="radio" name="p2" value="C2"> Celcius </br>
+<input type="radio" name="p2" value="F2"> Fahrenheit </br>
+<input type="radio" name="p2" value="R2"> Rheamur </br>
+<input type="radio" name="p2" value="K2"> Kelvin </br>
+</div>
+<input type="submit" name="submit" value="submit"> </br>
+</form>
+<?php
+    $nilai = NULL;
+    $p1 = NULL;  
+    $p2 = NULL;
+    if(isset($_POST['submit'])){
+        $nilai = (isset($_POST['nilai']) && $_POST['nilai'] != "" ? $_POST['nilai'] : NULL);
+        $p1 =$_POST['p1'];
+        $p2 =$_POST['p2'];
+        switch($p1){
+        case "C1" :
+            switch($p2){
+            case "C2" :
+                echo "<h1> Hasil : $nilai &deg;C</h1>";
+                break;
+            case "F2" :
+                $hasil = $nilai * 9 / 5 + 32;
+                echo "<h1> Hasil : $hasil &deg;F</h1>";
+                break;
+            case "R2" :
+                $hasil = $nilai * 4 / 5;
+                echo "<h1> Hasil : $hasil &deg;R</h1>";
+                break;
+            case "K2" :
+                $hasil = $nilai + 273;
+                echo "<h1> Hasil : $hasil &deg;K</h1>";
+                break;
+            default:
+                echo "belum memilih!!";
+            }
+            break;
+        case "F1" :
+            switch($p2){
+            case "C2" :
+                $hasil = ($nilai - 32) * 5 / 9;
+                echo "<h1> Hasil : $hasil &deg:C</h1>";
+                break;
+            case "F2" :
+                echo "<h1> Hasil : $nilai &deg;F</h1>";
+                break;
+            case "R2" :
+                $hasil = ($nilai - 32) * 4 / 9;
+                echo "<h1> Hasil : $hasil &deg;R</h1>";
+                break;
+            case "K2" :
+                $hasil = ($nilai - 32) * 5 / 9 + 273;
+                echo "<h1> Hasil : $hasil &deg;K</h1>";
+                break;
+            default:
+                echo "belum memilih!!";
+            }
+            break;
+        case "R1" :
+            switch($p2){
+            case "C2" :
+                $hasil = $nilai * 5 / 4;
+                echo "<h1> Hasil: $hasil &deg;C</h1>";
+                break;
+            case "F2" :
+                $hasil = $nilai * 9 / 4 + 32;
+                echo "<h1> Hasil : $hasil &deg;F</h1>";
+                break;
+            case "R2" :
+                echo "<h1> Hasil : $nilai &deg;R</h1>";
+                break;
+            case "K2" :
+                $hasil = $nilai * 5 / 4 + 273;
+                echo "<h1> Hasil : $hasil &deg;K</h1>";
+                break;
+            default:
+                echo "belum memilih!!";
+            }
+            break;
+        case "K1" :
+            switch($p2){
+            case "C2" :
+                $hasil = $nilai - 273 ;
+                echo "<h1> Hasil : $hasil &deg;C</h1>";
+                break;
+            case "F2" :
+                $hasil = ($nilai - 273) * 9 / 5 + 32;
+                echo "<h1> Hasil : $hasil &deg;F</h1>";
+                break;
+            case "R2" :
+                $hasil = ($nilai - 273) * 4 / 5;
+                echo "<h1> Hasil : $hasil &deg;R</h1>";
+                break;
+            case "K2" :
+                echo "<h1> Hasil : $nilai &deg;K</h1>";
+                break;
+            default:
+                echo "belum memilih!!";
+            }
+            break;
+        default:
+            echo "belum memilih!!";
+        }
+    }
+    ?>
+</body>
+</html>
+</body>
+</html>
