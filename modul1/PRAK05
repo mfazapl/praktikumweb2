@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+<?php
+$x = array('num1'=>"Samsung Galaxy S22", 'num2'=>"Samsung GalaxyS22+", 'num3'=>"Samsung Galaxy A03", 'num4'=>"Samsung Galaxy Xcover 5");
+echo " <table border='1'>";
+echo " <tr>";
+echo " <th><h3> Daftar Smartphone Samsung</th></h3>";
+echo " </tr>";
+echo " <tr>";
+echo " <td> $x[num1] </td>";
+echo " <tr>";
+echo " <td> $x[num2] </td>";
+echo " </tr>";
+echo " <tr>";
+echo " <td> $x[num3] </td>";
+echo " </tr> ";
+echo " <tr>";
+echo " <td> $x[num4] </td> ";
+echo " </tr>";
+echo " </table>";
+
+?>
+
+</body>
+
+
+
+    </html>
