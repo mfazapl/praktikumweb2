@@ -1,0 +1,55 @@
+<html>
+<body>
+<form method="POST">
+<div>
+        <label for=" "> Nama: 1 </label>
+        <input type="text" name="nama1">
+</div>
+<div> 
+        <label for=" "> Nama: 2 </label>
+        <input type="text" name="nama2">
+</div>
+<div>
+        <label for=" "> Nama: 3 </label>
+        <input type="text" name="nama3">
+</div>
+<input type="submit" name="submit" value="submit">
+</form>
+
+<?php
+
+if(isset($_POST['submit'])){
+$nama1 = $_POST['nama1'];
+$nama2 = $_POST['nama2'];
+$nama3 = $_POST['nama3'];
+$nama= array(" ", " " ," ");
+
+if((strcmp($nama3, $nama2 ) > 0)&& (strcmp($nama3 , $nama1) > 0)){
+$nama [2] = $nama3;
+}elseif ((strcmp($nama3, $nama1) < 0) && (strcmp($nama3 , $nama2) < 0)) {
+$nama [0] = $nama3;
+}else{
+$nama [1] = $nama3;
+}
+
+
+if((strcmp($nama2, $nama1) > 0 ) && (strcmp($nama2, $nama3) > 0)){
+$nama [2] = $nama2;
+}elseif ((strcmp($nama2 , $nama3) < 0) && (strcmp($nama2, $nama1) < 0)){
+$nama [0] = $nama2;
+}else{
+$nama [1] = $nama2;
+}
+        
+if((strcmp($nama1, $nama2) > 0 ) && (strcmp($nama1 , $nama3) > 0 )){
+$nama[2] = $nama1;
+} elseif ((strcmp($nama1, $nama2) < 0 ) && (strcmp($nama1 , $nama3 )< 0 )) {
+$nama[0] = $nama1;
+} else{
+$nama[1] = $nama1;
+}
+var_dump($nama);
+}
+?>
+</body>
+</html>
