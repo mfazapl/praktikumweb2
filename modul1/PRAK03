@@ -1,0 +1,15 @@
+<?php
+
+$x = 37.841;
+
+$num1 = ($x*9/5)+32;
+$num2 = 4/5*$x;
+$num3 = $x+273.15;
+
+echo "Farenheit:".round($num1,4);
+echo "<br>";
+echo "Reamur   :".round($num2,4);
+echo "<br>";
+echo "Kelcin   :".round($num3,4);
+
+?>
