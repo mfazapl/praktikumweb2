@@ -1,0 +1,41 @@
+<html>
+<head>
+    <style>
+        h3{
+            color: red;
+        }
+
+       div{
+           font-size: 20px;
+           color: green;
+       }
+    </style>
+</head>
+
+    <form method="POST">
+    <label> Jumlah Peserta: </label>
+    <input type="text" name="jumlah"></br>
+    <input type="submit" name="submit" value="submit">
+</form>
+
+<?php
+if(isset($_POST['submit']))
+{
+  $jumlah = $_POST['jumlah'];
+  $x = 1; 
+  while($x <= $jumlah)
+  {
+   if($x % 2 == 0)
+   {
+      echo"<h3> Peserta ke: $x </h3></br>";
+   }else{
+       echo"<div>Peserta ke: $x </br>";
+       echo"</div>";
+   }
+   $x++;
+  }
+
+}
+?>
+
+</html>
